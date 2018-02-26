@@ -1,5 +1,4 @@
-/*@author Brandon Treston for programming II class
- * 
+/* 
  *Inheriting 3 methods and 2 fields
  * ~~~~~~~Methods~~~~~~
  * getBalance()
