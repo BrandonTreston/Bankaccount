@@ -1,4 +1,5 @@
-/* 
+/*@author Brandon Treston for programming II class
+ * 
  *Inheriting 3 methods and 2 fields
  * ~~~~~~~Methods~~~~~~
  * getBalance()
@@ -7,7 +8,6 @@
  * 
  * ~~~~~~~Fields~~~~~~~~
  * private int balance
- * private int number
  */
 public class CheckingAccount extends Bankaccount {
 	
@@ -31,7 +31,7 @@ public class CheckingAccount extends Bankaccount {
 	
 	public void deductFees() {
 		if (transactionCount > freeTransactions) {
-			double fees = transactionFee * transactionCount - freeTransactions;
+			double fees = transactionFee * (transactionCount - freeTransactions);
 			super.withdraw(fees);
 		}
 		transactionCount = 0;
@@ -39,11 +39,11 @@ public class CheckingAccount extends Bankaccount {
 	}		//defined in CheckingAccount, does not override
 	
 	public void transfer(double amount, Bankaccount other) {
-		this.withdraw(amount);
+		super.withdraw(amount);
 		other.deposit(amount);
 	}
 	private int transactionCount;
 	private static final int freeTransactions = 3;
-	private static final double transactionFee = 2;
+	private static final double transactionFee = 2.0;
 	//also, inherits the fields balance, and number from Bankaccount
 }

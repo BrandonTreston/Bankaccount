@@ -9,8 +9,23 @@ public class BankaccountTester {
 		System.out.print("Enter Withdraw Amount: ");
 		account.withdraw(in.nextDouble());
 		System.out.print("Balance is: ");
-		System.out.println(account.getBalance(0));
-		in.close();
+		System.out.println(account.getBalance());
+		in.close();	
+		
+		SavingsAccount savings = new SavingsAccount(.5);
+		CheckingAccount checking = new CheckingAccount(100, 1);
+		
+		savings.deposit(10000);
+		savings.transfer(2000, checking);
+		checking.withdraw(1500);
+		checking.withdraw(80);
+		savings.transfer(1000, checking);
+		checking.withdraw(400);
+		savings.addIntrest();
+		checking.deductFees();
+		
+		System.out.println("savings balance is: " +savings.getBalance());
+		System.out.println("checking balance is: " + checking.getBalance());
 	}
 
 }

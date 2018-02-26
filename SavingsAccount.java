@@ -5,7 +5,7 @@ public class SavingsAccount extends Bankaccount {
 		
 	}
 	public void addIntrest() {
-		double intrest = getBalance(1) * intrestRate / 100;
+		double intrest = getBalance() * intrestRate / 100;
 		deposit(intrest);
 		
 	}
